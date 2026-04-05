@@ -95,7 +95,7 @@ async function displayMovei(page = 1, query = '', quality = '', genre = '', rati
                              `).join('')}
                     </div>
 
-                    <button
+                    <button onclick="goToDetail(${movei.id})"
                         class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-black uppercase px-6 py-3 rounded-xl shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all active:scale-95">
                         View Details
                     </button>
@@ -115,6 +115,10 @@ async function displayMovei(page = 1, query = '', quality = '', genre = '', rati
 
     });
 
+}
+
+function goToDetail(id) {
+    window.location.href = `detailpage.html?movie_id=${id}`;
 }
 
 function prepage() {

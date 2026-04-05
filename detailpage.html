@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/detail-style.css">
+</head>
+
+<body class="bg-[#0f172a] text-slate-200 min-h-screen relative overflow-x-hidden">
+
+
+
+    <nav
+        class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5 px-4 md:px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-4 md:gap-8">
+            <h1 class="text-xl md:text-2xl font-black tracking-tighter text-white">
+                MOVIE<span class="text-blue-500">HUB</span>
+            </h1>
+            <div class="hidden md:flex gap-6 text-sm font-medium text-slate-400">
+                <a href="#" class="hover:text-blue-400 transition">Home</a>
+                <a href="#" class="hover:text-blue-400 transition text-blue-500 font-bold">Browse</a>
+                <a href="#" class="hover:text-blue-400 transition">Trending</a>
+            </div>
+        </div>
+        <div class="relative w-1/3 hidden lg:block">
+            <input type="text" placeholder="Quick search..."
+                class="w-full bg-slate-900 border border-white/10 rounded-full py-2 px-5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all">
+        </div>
+        <div class="flex gap-2 md:gap-4 items-center">
+            <button class="text-xs md:text-sm font-semibold hover:text-blue-400">Login</button>
+            <button
+                class="bg-blue-600 hover:bg-blue-500 text-white px-4 md:px-5 py-2 rounded-full text-xs md:text-sm font-bold shadow-lg shadow-blue-900/20 transition-all">Register</button>
+        </div>
+    </nav>
+
+     <main class="relative w-full h-[650px] flex items-center justify-center pt-8 overflow-hidden bg-slate-950">
+
+        <div id="bg-image" 
+             style="background-image: url('');"
+             class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 opacity-40 blur-md scale-110">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/40"></div>
+        </div>
+
+        <div class="relative z-10 w-full max-w-[1200px] bg-slate-900/60 backdrop-blur-2xl border border-white/10 rounded-[40px] p-8 md:p-12 shadow-[0_30px_100px_rgba(0,0,0,0.8)] overflow-hidden group">
+
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-600/15 rounded-full blur-[100px] group-hover:bg-blue-600/25 transition-all duration-700"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-12 items-center relative z-10">
+
+                <div class="relative">
+                    <div class="relative rounded-[30px] overflow-hidden border-4 border-white/5 shadow-2xl transition-all duration-500 hover:scale-105 hover:border-blue-500/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.3)]">
+                        <img id="poster" src="" alt="Movie Poster" class="w-full h-[450px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="space-y-2">
+                        <div class="flex items-baseline gap-4">
+                            <h1 id="title" class="text-7xl font-black text-white tracking-tighter drop-shadow-2xl">Title</h1>
+                            <span id="year" class="text-3xl font-medium text-slate-400">(2010)</span>
+                        </div>
+
+                        <div id="genres" class="flex flex-wrap items-center gap-3 pt-2">
+                            <div class="bg-yellow-500/10 border border-yellow-500/20 px-3 py-1 rounded-lg flex items-center gap-2">
+                                <span class="text-yellow-500 text-lg">★</span>
+                                <span id="rating" class="font-bold text-yellow-500 text-sm">6.0 <span class="text-[10px] opacity-70">IMDb</span></span>
+                            </div>
+                            <span class="bg-slate-800/50 backdrop-blur-md px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-widest border border-white/5 cursor-pointer transition hover:text-blue-400 hover:border-blue-500/50">Action</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6 text-slate-300 font-semibold text-sm">
+                        <div class="flex items-center gap-2.5">
+                            <span class="text-blue-500 text-lg">🕒</span>
+                            <span id="runtime" class="text-slate-300 font-semibold">91m</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <span class="text-blue-500 text-lg">🌐</span>
+                            <span id="language" class="text-slate-300 font-semibold">English</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <span id="quality" class="text-blue-500 text-lg">📺</span>
+                            1080p, 720p
+                        </div>
+                    </div>
+
+                    <p id="description" class="text-xl italic text-slate-300 font-medium leading-relaxed border-l-4 border-blue-600/50 pl-6 drop-shadow">
+                        "A desperate man takes part in an underworld game of Russian roulette."
+                    </p>
+
+                    <div class="flex flex-wrap gap-5 pt-4">
+                        <button id="download-btn" class="bg-blue-600 hover:bg-blue-500 text-white font-black px-12 py-5 rounded-2xl flex items-center gap-3.5 transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_12px_35px_rgba(37,99,235,0.4)] hover:shadow-blue-500/60">
+                            <span class="text-2xl font-bold">↓</span> Download Now
+                        </button>
+                        <button class="bg-slate-800 hover:bg-slate-700 text-white font-black px-12 py-5 rounded-2xl flex items-center gap-3.5 transition-all duration-300 hover:scale-105 active:scale-95 border border-white/10 backdrop-blur-md">
+                            <span class="text-2xl">►</span> Watch Trailer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="w-full bg-[#0f172a] pb-20 pt-3">
+        <div class="max-w-[1400px] mx-auto px-12 lg:px-20 grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-16">
+
+            <div class="space-y-12">
+
+                <div class="space-y-6">
+                    <h3 class="flex items-center gap-3 text-2xl font-black text-white uppercase tracking-tight">
+                        <span class="w-1.5 h-8 bg-blue-600 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.6)]"></span>
+                        Plot Summary
+                    </h3>
+                    <p id="summary" class="text-slate-400 text-lg leading-relaxed font-medium">
+                        <!-- A naive young man assumes a dead man's identity and finds himself embroiled in an underground
+                        world of power, violence, and chance where men gamble behind closed doors on the lives of other
+                        men. In a secret location, thirteen men gather to engage in a terrifying game of Russian
+                        roulette. With high stakes and extreme tension, the survival of the lucky few depends on sheer
+                        luck and the pull of a trigger. -->
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <h3 class="flex items-center gap-3 text-2xl font-black text-white uppercase tracking-tight">
+                        <span class="w-1.5 h-8 bg-blue-600 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.6)]"></span>
+                        Technical Specs
+                    </h3>
+
+                    <div id="tech-spaces" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- <div
+                            class="bg-[#1e293b]/40 backdrop-blur-md border border-white/5 p-6 rounded-[30px] space-y-4">
+                            <div class="flex justify-between items-center border-b border-white/5 pb-3">
+                                <span id="720p" class="text-xl font-black text-white">720p</span>
+                                <span id="720blueray"
+                                    class="text-[10px] font-bold bg-slate-800 px-2 py-1 rounded text-slate-400 uppercase tracking-widest">BluRay</span>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex justify-between text-sm font-semibold"><span
+                                        class="text-slate-500">Size</span> <span class="text-slate-200">946.49 MB</span>
+                                </div>
+                                <div class="flex justify-between text-sm font-semibold"><span
+                                        class="text-slate-500">Seeds</span> <span class="text-green-500">11</span></div>
+                                <div class="flex justify-between text-sm font-semibold"><span
+                                        class="text-slate-500">Peers</span> <span class="text-blue-400">4</span></div>
+                                <div class="flex justify-between text-sm font-semibold"><span
+                                        class="text-slate-500">Codec</span> <span class="text-slate-200">x264</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-[#1e293b]/40 backdrop-blur-md border border-white/5 p-6 rounded-[30px] space-y-4">
+                            <div class="flex justify-between items-center border-b border-white/5 pb-3">
+                                <span class="text-xl font-black text-white">1080p</span>
+                                <span
+                                    class="text-[10px] font-bold bg-slate-800 px-2 py-1 rounded text-slate-400 uppercase tracking-widest">BluRay</span>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex justify-between text-sm font-semibold"><span
+                                        class="text-slate-500">Size</span> <span class="text-slate-200">1.79 GB</span>
+                                </div>
+                                <div class="flex justify-between text-sm font-semibold"><span
+                                        class="text-slate-500">Seeds</span> <span class="text-green-500">12</span></div>
+                                <div class="flex justify-between text-sm font-semibold"><span
+                                        class="text-slate-500">Peers</span> <span class="text-blue-400">6</span></div>
+                                <div class="flex justify-between text-sm font-semibold"><span
+                                        class="text-slate-500">Codec</span> <span class="text-slate-200">x264</span>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <h3 class="flex items-center gap-3 text-2xl font-black text-white uppercase tracking-tight">
+                    <span class="w-1.5 h-8 bg-blue-600 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.6)]"></span>
+                    Similar Movies
+                </h3>
+
+                <div id="sim-movei" class="grid grid-cols-2 gap-6">
+                    <!-- <div class="space-y-3 group cursor-pointer">
+                        <div
+                            class="relative aspect-[2/3] rounded-2xl overflow-hidden border border-white/10 transition-all duration-500 group-hover:border-blue-500 group-hover:shadow-[0_0_25px_rgba(37,99,235,0.3)]">
+                            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=400"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+                        <p
+                            class="text-sm font-black text-white truncate px-1 group-hover:text-blue-400 transition-colors">
+                            Blitz (2011)</p>
+                    </div>
+
+                    <div class="space-y-3 group cursor-pointer">
+                        <div
+                            class="relative aspect-[2/3] rounded-2xl overflow-hidden border border-white/10 transition-all duration-500 group-hover:border-blue-500 group-hover:shadow-[0_0_25px_rgba(37,99,235,0.3)]">
+                            <img src="https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3?q=80&w=400"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+                        <p
+                            class="text-sm font-black text-white truncate px-1 group-hover:text-blue-400 transition-colors">
+                            The Mechanic</p>
+                    </div>
+
+                    <div class="space-y-3 group cursor-pointer">
+                        <div
+                            class="relative aspect-[2/3] rounded-2xl overflow-hidden border border-white/10 transition-all duration-500 group-hover:border-blue-500 group-hover:shadow-[0_0_25px_rgba(37,99,235,0.3)]">
+                            <img src="https://images.unsplash.com/photo-1512113569143-3d623963044a?q=80&w=400"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+                        <p
+                            class="text-sm font-black text-white truncate px-1 group-hover:text-blue-400 transition-colors">
+                            Transporter 3</p>
+                    </div>
+
+                    <div class="space-y-3 group cursor-pointer">
+                        <div
+                            class="relative aspect-[2/3] rounded-2xl overflow-hidden border border-white/10 transition-all duration-500 group-hover:border-blue-500 group-hover:shadow-[0_0_25px_rgba(37,99,235,0.3)]">
+                            <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=400"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+                        <p
+                            class="text-sm font-black text-white truncate px-1 group-hover:text-blue-400 transition-colors">
+                            Crank: High Voltage</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full bg-[#0f172a] pb-32">
+        <div class="max-w-[1400px] mx-auto px-12 lg:px-20 space-y-16">
+
+            <div class="space-y-8">
+                <h3 class="flex items-center gap-3 text-2xl font-black text-white uppercase tracking-tight">
+                    <span class="w-1.5 h-8 bg-blue-600 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.6)]"></span>
+                    Movie Reviews
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="bg-[#1e293b]/40 backdrop-blur-md border border-white/5 p-8 rounded-[35px] space-y-4 hover:bg-[#1e293b]/60 transition-all duration-300">
+                        <div class="flex justify-between items-center">
+                            <span class="font-black text-slate-200">Mark J.</span>
+                            <div class="flex items-center gap-1 text-blue-500 text-xs font-bold">
+                                <span>★</span> 8/10
+                            </div>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed italic">
+                            "Intense atmosphere and a great cast. The Russian roulette scenes are genuinely
+                            nerve-wracking, though the pacing feels a bit off in the middle act."
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-[#1e293b]/40 backdrop-blur-md border border-white/5 p-8 rounded-[35px] space-y-4 hover:bg-[#1e293b]/60 transition-all duration-300">
+                        <div class="flex justify-between items-center">
+                            <span class="font-black text-slate-200">Sarah Wilson</span>
+                            <div class="flex items-center gap-1 text-blue-500 text-xs font-bold">
+                                <span>★</span> 5/10
+                            </div>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed italic">
+                            "A gritty remake that captures the tension of the original but lacks some of the artistic
+                            depth. Still worth a watch for fans of the thriller genre."
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-[#1e293b]/40 backdrop-blur-md border border-white/5 p-8 rounded-[35px] space-y-4 hover:bg-[#1e293b]/60 transition-all duration-300">
+                        <div class="flex justify-between items-center">
+                            <span class="font-black text-slate-200">David Chen</span>
+                            <div class="flex items-center gap-1 text-blue-500 text-xs font-bold">
+                                <span>★</span> 8/10
+                            </div>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed italic">
+                            "Underrated gem. The stress of the game is palpable. Sam Riley delivers a haunting
+                            performance as the man who's in way over his head."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <h3 class="flex items-center gap-3 text-2xl font-black text-white uppercase tracking-tight">
+                    <span class="w-1.5 h-8 bg-blue-600 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.6)]"></span>
+                    Comments
+                </h3>
+
+                <div class="space-y-10 pl-4">
+                    <div class="flex gap-4 group">
+                        <div
+                            class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-blue-500 transition-colors">
+                            <img src="https://i.pravatar.cc/150?u=alex" class="w-full h-full object-cover">
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-3">
+                                <span class="font-bold text-blue-400">Alex Thompson</span>
+                                <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">2 days
+                                    ago</span>
+                            </div>
+                            <p class="text-slate-300 text-sm">Does anyone know where this was filmed? The locations look
+                                incredibly gritty and perfect for the mood.</p>
+                            <div class="flex gap-4 text-[11px] font-bold text-slate-500">
+                                <button class="hover:text-blue-500 transition">👍 14</button>
+                                <button class="hover:text-blue-500 transition">Reply</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 group">
+                        <div
+                            class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-blue-500 transition-colors">
+                            <img src="https://i.pravatar.cc/150?u=elena" class="w-full h-full object-cover">
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-3">
+                                <span class="font-bold text-blue-400">Elena Rodriguez</span>
+                                <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">5 hours
+                                    ago</span>
+                            </div>
+                            <p class="text-slate-300 text-sm">That ending though... I didn't see that coming. Really
+                                makes you think about luck vs choice.</p>
+                            <div class="flex gap-4 text-[11px] font-bold text-slate-500">
+                                <button class="hover:text-blue-500 transition">👍 28</button>
+                                <button class="hover:text-blue-500 transition">Reply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-[#1e293b]/30 border border-white/5 rounded-[40px] p-12 text-center space-y-6">
+                    <h4 class="text-2xl font-black text-white">Want to join the discussion?</h4>
+                    <p class="text-slate-400 font-medium">Login or create an account to share your thoughts and rate the
+                        movie.</p>
+                    <button
+                        class="bg-blue-600 hover:bg-blue-500 text-white font-black px-10 py-4 rounded-full transition-all duration-300 shadow-[0_10px_25px_rgba(37,99,235,0.4)] hover:scale-105 active:scale-95">
+                        Login to leave a comment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer
+        class="mt-10 md:mt-20 py-8 md:py-10 border-t border-white/5 text-center text-slate-600 text-[10px] md:text-sm">
+        <p>© 2026 MovieHub. All rights reserved.</p>
+    </footer>
+    <script src="js/detail.js"></script>
+</body>
+
+</html>
