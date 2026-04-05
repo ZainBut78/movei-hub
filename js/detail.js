@@ -57,7 +57,7 @@ function displayMovieDetail(movei) {
     moveiLanguage.textContent = movei.language;
     moveiquality.textContent = movei.quality;
     runTime.textContent = `${movei.runtime}m`;
-    moveiDesc.textContent = movei.description_intro;
+    // moveiDesc.textContent = movei.description_intro;
     plotSum.textContent = movei.description_full;
     const techData = movei.torrents
     techData.forEach(movei => {
